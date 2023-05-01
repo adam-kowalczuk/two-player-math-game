@@ -1,4 +1,6 @@
 class Player 
+  # Will need to read player name and number of lives left
+  attr_reader :name, :lives
 
   # Set player name and number of lives
   def initialize(name)
@@ -17,6 +19,3 @@ class Player
   end
 end
 
-jeff = Player.new('Jeff')
-jeff.lose_life
-puts jeff.game_over?
