@@ -3,7 +3,7 @@ class Game
     # Create two new players
     @player1 = Player.new('Player 1')
     @player2 = Player.new('Player 2')
-
+    # Store both players in an array that will be reversed after every turn to decide current player
     @players = [@player1, @player2]
   end
 
@@ -28,29 +28,21 @@ class Game
     end
   end
 
+  # Start the game
   def play
     # Run loop until one of the players loses
     loop do
-      # Player 1 goes first
+      # The player at index 0 in the @players array takes a turn (this will be @player1 when game is started)
       turn(@players[0])
       # After their turn, provide a lives count for each player
       puts "P1: #{@player1.lives}/3 vs P2: #{@player2.lives}/3"
-      # Break out of the loop if Player 1 has no remaining lives
+      # Break out of the loop if current player has no remaining lives
       break puts "#{@players[1].name} wins with a score of #{@players[1].lives}/3" if @players[0].game_over?
-      
+      # Display on each new turn
       puts "---NEW TURN---"
       
+      # Reverse elements in @players array. The player previously at index 1 will now be at index 0, and it will be their turn
       @players.reverse!
-
-      # # Now it's Player 2's turn 
-      # turn(@player2)
-      # # After their turn, provide a lives count for each player
-      # puts "P1: #{@player1.lives}/3 vs P2: #{@player2.lives}/3"
-      # # Break out of the loop if Player 2 has no remaining lives
-      # break puts "Player 1 wins with a score of #{@player1.lives}/3" if @player2.game_over?
-
-      # # If neither player had won, start a new round
-      # puts "---NEW TURN---"
     end
 
     # Once there is a victor, display below messages and end game
