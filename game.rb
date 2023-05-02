@@ -1,11 +1,8 @@
-require './player.rb'
-require './question.rb'
-
 class Game
   def play
     # Create two new players
-    @player1 = Player.new('Player 1')
-    @player2 = Player.new('Player 2')
+    player1 = Player.new('Player 1')
+    player2 = Player.new('Player 2')
 
     # Run player through an entire turn
     def turn (player)
@@ -31,20 +28,20 @@ class Game
     # Run loop until one of the players loses
     loop do
       # Player 1 goes first
-      turn(@player1)
+      turn(player1)
       # After their turn, provide a lives count for each player
-      puts "P1: #{@player1.lives}/3 vs P2: #{@player2.lives}/3"
+      puts "P1: #{player1.lives}/3 vs P2: #{player2.lives}/3"
       # Break out of the loop if Player 1 has no remaining lives
-      break puts "Player 2 wins with a score of #{@player2.lives}/3" if @player1.game_over?
+      break puts "Player 2 wins with a score of #{player2.lives}/3" if player1.game_over?
 
       puts "---NEW TURN---"
 
       # Now it's Player 2's turn 
-      turn(@player2)
+      turn(player2)
       # After their turn, provide a lives count for each player
-      puts "P1: #{@player1.lives}/3 vs P2: #{@player2.lives}/3"
+      puts "P1: #{player1.lives}/3 vs P2: #{player2.lives}/3"
       # Break out of the loop if Player 2 has no remaining lives
-      break puts "Player 1 wins with a score of #{@player1.lives}/3" if @player2.game_over?
+      break puts "Player 1 wins with a score of #{player1.lives}/3" if player2.game_over?
 
       # If neither player had won, start a new round
       puts "---NEW TURN---"
