@@ -1,6 +1,6 @@
-require './player.rb'
-require './question.rb'
-require './game.rb'
+require './player'
+require './question'
+require './game'
 
 new_game = Game.new
 

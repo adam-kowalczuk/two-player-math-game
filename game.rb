@@ -8,7 +8,7 @@ class Game
   end
 
   # Run player through an entire turn
-  def turn (player)
+  def turn(player)
     # Create a new question
     question = Question.new
 
@@ -21,7 +21,7 @@ class Game
     # Check if player's answer is correct
     if question.correct_answer?(answer)
       puts "#{player.name}: YES! You are correct!"
-    else 
+    else
       puts "#{player.name}: Seriously? No!"
       # If incorrect, decrease player lives by 1
       player.lose_life
@@ -38,15 +38,16 @@ class Game
       puts "P1: #{@player1.lives}/3 vs P2: #{@player2.lives}/3"
       # Break out of the loop if current player has no remaining lives
       break puts "#{@players[1].name} wins with a score of #{@players[1].lives}/3" if @players[0].game_over?
+
       # Display on each new turn
-      puts "---NEW TURN---"
-      
+      puts '---NEW TURN---'
+
       # Reverse elements in @players array. The player previously at index 1 will now be at index 0, and it will be their turn
       @players.reverse!
     end
 
     # Once there is a victor, display below messages and end game
-    puts "---GAME OVER---"
-    puts "Thanks for playing!"
+    puts '---GAME OVER---'
+    puts 'Thanks for playing!'
   end
 end

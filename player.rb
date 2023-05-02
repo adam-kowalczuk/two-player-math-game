@@ -1,4 +1,4 @@
-class Player 
+class Player
   # Will need to read player name and number of lives left
   attr_reader :name, :lives
 
@@ -8,7 +8,7 @@ class Player
     @lives = 3
   end
 
-  # Decrease player lives by 1 
+  # Decrease player lives by 1
   def lose_life
     @lives -= 1
   end
@@ -18,4 +18,3 @@ class Player
     @lives == 0
   end
 end
-

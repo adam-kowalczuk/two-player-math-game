@@ -1,4 +1,4 @@
-class Question 
+class Question
   # Will need to read num1 and num2 outside of class
   attr_reader :num1, :num2
 
