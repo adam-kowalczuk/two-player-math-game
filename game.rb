@@ -12,10 +12,17 @@ def turn (player)
   answer = $stdin.gets.chomp
 
   if question.correct_answer?(answer)
-    puts "Correct!"
+    puts "#{player.name}: YES! You are correct!"
   else 
-    puts "Wrong answer! You lose a life!"
+    puts "#{player.name}: Seriously? No!"
     player.lose_life
   end
 end
 
+loop do
+  turn(@player1)
+  puts "P1: #{@player1.lives}/3 vs P2: #{@player2.lives}/3"
+  break puts "Player two wins!" if @player1.game_over?
+
+  puts "---NEXT ROUND---"
+end
