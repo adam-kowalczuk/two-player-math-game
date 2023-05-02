@@ -1,6 +1,6 @@
 # TwO-O-Player Math Game
 
-Created for gaining experience with Ruby, this math game pits two players against each other in an intense battle of guessing the sum of two randomly-generated numbers. Who will be victorious? It could be you!
+Created to gain experience with Ruby and OOP, this math game pits two players against each other in an intense battle of guessing the sum of two randomly-generated numbers. Who will be victorious? It could be you!
 
 ## Getting Started
 
