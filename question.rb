@@ -10,6 +10,6 @@ class Question
 
   # Check whether answer supplied matches sum of both numbers
   def correct_answer?(answer)
-    answer == @num1 + @num2
+    answer.to_i == @num1 + @num2
   end
 end
