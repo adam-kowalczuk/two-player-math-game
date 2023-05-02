@@ -22,7 +22,10 @@ end
 loop do
   turn(@player1)
   puts "P1: #{@player1.lives}/3 vs P2: #{@player2.lives}/3"
-  break puts "Player two wins!" if @player1.game_over?
+  break puts "Player two wins with a score of #{@player2.lives}/3" if @player1.game_over?
 
   puts "---NEXT ROUND---"
 end
+
+puts "---GAME OVER---"
+puts "Thanks for playing!"
